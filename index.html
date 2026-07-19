@@ -2,27 +2,141 @@
 <html>
 <head>
     <title>camilogin</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* This makes the whole page sky blue */
-        body {
-            background-color: #87CEEB; /* Sky blue color */
+        /* Reset and base styles */
+        * {
             margin: 0;
-            height: 100vh;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #87CEEB, #4A90D9);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Arial, sans-serif;
+            padding: 20px;
         }
-        /* This styles the text */
-        h1 {
-            font-size: 80px;
+
+        .container {
+            background: white;
+            border-radius: 30px;
+            padding: 40px 30px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #87CEEB;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            font-weight: bold;
             color: white;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
-            letter-spacing: 2px;
+            box-shadow: 0 5px 20px rgba(135, 206, 235, 0.5);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .link-btn {
+            display: block;
+            background: #f5f5f5;
+            color: #333;
+            text-decoration: none;
+            padding: 16px 20px;
+            margin: 12px 0;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .link-btn:hover {
+            background: #4A90D9;
+            color: white;
+            transform: scale(1.02);
+            border-color: #4A90D9;
+            box-shadow: 0 8px 25px rgba(74, 144, 217, 0.3);
+        }
+
+        /* Custom colors for each platform */
+        .btn-instagram:hover { background: #E4405F; border-color: #E4405F; }
+        .btn-twitter:hover { background: #1DA1F2; border-color: #1DA1F2; }
+        .btn-youtube:hover { background: #FF0000; border-color: #FF0000; }
+        .btn-tiktok:hover { background: #000000; border-color: #000000; }
+        .btn-github:hover { background: #333; border-color: #333; }
+        .btn-linkedin:hover { background: #0A66C2; border-color: #0A66C2; }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        /* Emoji icons */
+        .icon {
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>camilogin</h1>
+    <div class="container">
+        <!-- Avatar/Circle with initials -->
+        <div class="avatar">CL</div>
+
+        <!-- Your name -->
+        <h1>@camilogin</h1>
+        <p class="subtitle">✨ Connect with me everywhere ✨</p>
+
+        <!-- Link buttons - REPLACE the URLs with YOUR actual social links -->
+        <a href="https://www.instagram.com/camiloginn/" target="_blank" class="link-btn btn-instagram">
+            <span class="icon">📸</span> Instagram
+        </a>
+
+        <a href="https://twitter.com/yourusername" target="_blank" class="link-btn btn-twitter">
+            <span class="icon">🐦</span> Twitter / X
+        </a>
+
+        <a href="https://www.youtube.com/@camilogin" target="_blank" class="link-btn btn-youtube">
+            <span class="icon">▶️</span> YouTube
+        </a>
+
+        <a href="https://www.tiktok.com/@cami.loginn" target="_blank" class="link-btn btn-tiktok">
+            <span class="icon">🎵</span> TikTok
+        </a>
+
+        <a href="https://github.com/yourusername" target="_blank" class="link-btn btn-github">
+            <span class="icon">💻</span> GitHub
+        </a>
+
+        <a href="https://www.linkedin.com/in/derick-bedoya-2964b22b2/" target="_blank" class="link-btn btn-linkedin">
+            <span class="icon">🔗</span> LinkedIn
+        </a>
+
+        <!-- Optional footer -->
+        <div class="footer">📧 hello@camilogin.com</div>
+    </div>
 </body>
 </html>
