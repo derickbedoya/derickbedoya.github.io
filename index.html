@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
@@ -13,7 +12,11 @@
         }
 
         body {
-            background: linear-gradient(135deg, #87CEEB, #4A90D9);
+            /* 👇 CHANGE 'background.jpg' to YOUR background image filename */
+            background-image: url(IMG_3512.jpeg);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
             display: flex;
@@ -22,29 +25,43 @@
             padding: 20px;
         }
 
+        /* Dark overlay so text is readable */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
+
         .container {
-            background: white;
+            background: rgba(255, 255, 255, 0.92);
             border-radius: 30px;
             padding: 40px 30px;
             max-width: 420px;
             width: 100%;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             text-align: center;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(10px);
         }
 
+        /* 👇 PROFILE PICTURE CIRCLE */
         .avatar {
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background: #87CEEB;
             margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            font-weight: bold;
-            color: white;
-            box-shadow: 0 5px 20px rgba(135, 206, 235, 0.5);
+            /* 👇 CHANGE 'profile.jpg' to YOUR profile image filename */
+            background-image: url('IMG_3747.jpeg');
+            background-size: cover;
+            background-position: center;
+            border: 4px solid white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
         }
 
         h1 {
@@ -54,14 +71,14 @@
         }
 
         .subtitle {
-            color: #888;
+            color: #666;
             font-size: 14px;
             margin-bottom: 25px;
         }
 
         .link-btn {
             display: block;
-            background: #f5f5f5;
+            background: rgba(255, 255, 255, 0.9);
             color: #333;
             text-decoration: none;
             padding: 16px 20px;
@@ -70,32 +87,27 @@
             font-weight: 600;
             font-size: 16px;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 2px solid rgba(0,0,0,0.05);
         }
 
         .link-btn:hover {
-            background: #4A90D9;
-            color: white;
             transform: scale(1.02);
-            border-color: #4A90D9;
-            box-shadow: 0 8px 25px rgba(74, 144, 217, 0.3);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
         }
 
-        /* Custom colors for each platform */
-        .btn-instagram:hover { background: #E4405F; border-color: #E4405F; }
-        .btn-twitter:hover { background: #1DA1F2; border-color: #1DA1F2; }
-        .btn-youtube:hover { background: #FF0000; border-color: #FF0000; }
-        .btn-tiktok:hover { background: #000000; border-color: #000000; }
-        .btn-github:hover { background: #333; border-color: #333; }
-        .btn-linkedin:hover { background: #0A66C2; border-color: #0A66C2; }
+        .btn-instagram:hover { background: #E4405F; color: white; }
+        .btn-twitter:hover { background: #1DA1F2; color: white; }
+        .btn-youtube:hover { background: #FF0000; color: white; }
+        .btn-tiktok:hover { background: #000000; color: white; }
+        .btn-github:hover { background: #333; color: white; }
+        .btn-linkedin:hover { background: #0A66C2; color: white; }
 
         .footer {
             margin-top: 20px;
             font-size: 12px;
-            color: #aaa;
+            color: #999;
         }
 
-        /* Emoji icons */
         .icon {
             margin-right: 10px;
         }
@@ -103,15 +115,20 @@
 </head>
 <body>
     <div class="container">
-        <!-- Avatar/Circle with initials -->
-        <div class="avatar">CL</div>
+        <!-- Profile Picture -->
+        <div class="avatar"></div>
 
-        <!-- Your name -->
         <h1>@camilogin</h1>
         <p class="subtitle">✨ Connect with me everywhere ✨</p>
 
-        <!-- Link buttons - REPLACE the URLs with YOUR actual social links -->
-        <a href="https://www.instagram.com/camiloginn/" target="_blank" class="link-btn btn-instagram">
+        <!-- Navigation -->
+        <div style="margin-bottom: 20px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="index.html" style="color: #4A90D9; text-decoration: none; font-weight: 600;">Home</a>
+            <a href="about.html" style="color: #4A90D9; text-decoration: none; font-weight: 600;">About</a>
+        </div>
+
+        <!-- Social Links - REPLACE URLs with YOUR actual ones -->
+        <a href="https://instagram.com/yourusername" target="_blank" class="link-btn btn-instagram">
             <span class="icon">📸</span> Instagram
         </a>
 
@@ -119,11 +136,11 @@
             <span class="icon">🐦</span> Twitter / X
         </a>
 
-        <a href="https://www.youtube.com/@camilogin" target="_blank" class="link-btn btn-youtube">
+        <a href="https://youtube.com/@yourusername" target="_blank" class="link-btn btn-youtube">
             <span class="icon">▶️</span> YouTube
         </a>
 
-        <a href="https://www.tiktok.com/@cami.loginn" target="_blank" class="link-btn btn-tiktok">
+        <a href="https://tiktok.com/@yourusername" target="_blank" class="link-btn btn-tiktok">
             <span class="icon">🎵</span> TikTok
         </a>
 
@@ -131,12 +148,11 @@
             <span class="icon">💻</span> GitHub
         </a>
 
-        <a href="https://www.linkedin.com/in/derick-bedoya-2964b22b2/" target="_blank" class="link-btn btn-linkedin">
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="link-btn btn-linkedin">
             <span class="icon">🔗</span> LinkedIn
         </a>
 
-        <!-- Optional footer -->
-        <div class="footer">📧 hello@camilogin.com</div>
+        <div class="footer">📧 derickbedoya@icloud.com</div>
     </div>
 </body>
 </html>
