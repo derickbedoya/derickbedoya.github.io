@@ -42,19 +42,42 @@
             z-index: 0;
         }
 
+        /* ===== WRAPPER: stacks the two white boxes vertically ===== */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ===== BOX 1: Main Container (Profile, Nav, Social Icons) ===== */
         .container {
             background: rgba(255, 255, 255, 0.92);
             border-radius: 30px;
-            padding: 30px 20px;
-            max-width: 400px;
+            padding: 30px 20px 20px;
             width: 100%;
             box-shadow: 0 20px 60px rgba(0,0,0,0.5);
             text-align: center;
-            position: relative;
-            z-index: 1;
             backdrop-filter: blur(10px);
-            max-height: 95vh;
-            overflow-y: auto;
+        }
+
+        /* ===== BOX 2: Clothes Set (Separate white box) ===== */
+        .app-box {
+            background: white;
+            border-radius: 30px;
+            padding: 18px 20px 20px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .app-box:hover {
+            transform: scale(1.01);
         }
 
         .avatar {
@@ -99,12 +122,12 @@
             text-decoration: underline;
         }
 
-        /* ===== SOCIAL ICON GRID ===== */
+        /* ===== SOCIAL ICON GRID (SMALLER) ===== */
         .social-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 12px;
-            margin: 15px 0;
+            gap: 8px;
+            margin: 10px 0 4px;
         }
 
         .social-btn {
@@ -112,8 +135,8 @@
             align-items: center;
             justify-content: center;
             background: transparent;
-            border-radius: 14px;
-            padding: 8px 4px;
+            border-radius: 12px;
+            padding: 4px;
             transition: all 0.3s ease;
             text-decoration: none;
             aspect-ratio: 1 / 1;
@@ -127,40 +150,26 @@
         .social-btn img {
             width: 100%;
             height: 100%;
-            max-width: 48px;
-            max-height: 48px;
+            max-width: 36px;
+            max-height: 36px;
             object-fit: contain;
-            border-radius: 12px;
+            border-radius: 10px;
             display: block;
         }
 
         @media (max-width: 380px) {
             .social-btn img {
-                max-width: 38px;
-                max-height: 38px;
+                max-width: 30px;
+                max-height: 30px;
             }
             .social-grid {
-                gap: 8px;
+                gap: 6px;
             }
         }
 
-        /* ===== CLOTHES SET - ITS OWN WHITE BOX ===== */
-        .app-box {
-            background: white;
-            border-radius: 16px;
-            padding: 18px 16px;
-            margin: 16px 0 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 1px solid rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .app-box:hover {
-            transform: scale(1.01);
-        }
-
+        /* ===== CLOTHES SET STYLES ===== */
         .app-box .app-icon {
-            font-size: 36px;
+            font-size: 32px;
             display: block;
             margin-bottom: 2px;
         }
@@ -202,82 +211,75 @@
         }
 
         .footer {
-            margin-top: 16px;
+            margin-top: 14px;
             font-size: 12px;
             color: #999;
-        }
-
-        /* Scrollbar */
-        .container::-webkit-scrollbar {
-            width: 4px;
-        }
-        .container::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .container::-webkit-scrollbar-thumb {
-            background: #ccc;
-            border-radius: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Profile Picture -->
-        <div class="avatar"></div>
+    <div class="wrapper">
+        <!-- ===== BOX 1: Main Container ===== -->
+        <div class="container">
+            <!-- Profile Picture -->
+            <div class="avatar"></div>
 
-        <h1>@camilogin</h1>
-        <p class="subtitle">✨ Connect with me everywhere ✨</p>
+            <h1>@camilogin</h1>
+            <p class="subtitle">✨ Connect with me everywhere ✨</p>
 
-        <!-- Navigation -->
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+            <!-- Navigation -->
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <!-- ===== SOCIAL ICON GRID ===== -->
+            <div class="social-grid">
+                <!-- 1. Twitch -->
+                <a href="https://www.twitch.tv/camilogin" target="_blank" class="social-btn">
+                    <img src="https://cdn.simpleicons.org/twitch/9146FF" alt="Twitch">
+                </a>
+
+                <!-- 2. YouTube -->
+                <a href="https://www.youtube.com/@camilogin" target="_blank" class="social-btn">
+                    <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube">
+                </a>
+
+                <!-- 3. TikTok -->
+                <a href="https://www.tiktok.com/@cami.loginn" target="_blank" class="social-btn">
+                    <img src="https://cdn.simpleicons.org/tiktok/000000" alt="TikTok">
+                </a>
+
+                <!-- 4. Instagram -->
+                <a href="https://www.instagram.com/camiloginn/" target="_blank" class="social-btn">
+                    <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
+                </a>
+
+                <!-- 5. Facebook -->
+                <a href="https://www.facebook.com/yourusername" target="_blank" class="social-btn">
+                    <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook">
+                </a>
+
+                <!-- 6. Threads -->
+                <a href="https://www.threads.net/@yourusername" target="_blank" class="social-btn">
+                    <img src="https://cdn.simpleicons.org/threads/000000" alt="Threads">
+                </a>
+
+                <!-- 7. Twitter -->
+                <a href="https://x.com/cami_login" target="_blank" class="social-btn">
+                    <img src="https://cdn.simpleicons.org/x/000000" alt="Twitter">
+                </a>
+
+                <!-- 8. Snapchat -->
+                <a href="https://www.snapchat.com/add/yourusername" target="_blank" class="social-btn">
+                    <img src="https://cdn.simpleicons.org/snapchat/FFFC00" alt="Snapchat">
+                </a>
+            </div>
+
+            <div class="footer">📧 derickbedoya@icloud.com</div>
         </div>
 
-        <!-- ===== SOCIAL ICON GRID (Apps come first) ===== -->
-        <div class="social-grid">
-            <!-- 1. Twitch -->
-            <a href="https://www.twitch.tv/camilogin" target="_blank" class="social-btn">
-                <img src="https://cdn.simpleicons.org/twitch/9146FF" alt="Twitch">
-            </a>
-
-            <!-- 2. YouTube -->
-            <a href="https://www.youtube.com/@camilogin" target="_blank" class="social-btn">
-                <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube">
-            </a>
-
-            <!-- 3. TikTok -->
-            <a href="https://www.tiktok.com/@cami.loginn" target="_blank" class="social-btn">
-                <img src="https://cdn.simpleicons.org/tiktok/000000" alt="TikTok">
-            </a>
-
-            <!-- 4. Instagram -->
-            <a href="https://www.instagram.com/camiloginn/" target="_blank" class="social-btn">
-                <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
-            </a>
-
-            <!-- 5. Facebook -->
-            <a href="https://www.facebook.com/yourusername" target="_blank" class="social-btn">
-                <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook">
-            </a>
-
-            <!-- 6. Threads -->
-            <a href="https://www.threads.net/@yourusername" target="_blank" class="social-btn">
-                <img src="https://cdn.simpleicons.org/threads/000000" alt="Threads">
-            </a>
-
-            <!-- 7. Twitter -->
-            <a href="https://x.com/cami_login" target="_blank" class="social-btn">
-                <img src="https://cdn.simpleicons.org/x/000000" alt="Twitter">
-            </a>
-
-            <!-- 8. Snapchat -->
-            <a href="https://www.snapchat.com/add/yourusername" target="_blank" class="social-btn">
-                <img src="https://cdn.simpleicons.org/snapchat/FFFC00" alt="Snapchat">
-            </a>
-        </div>
-
-        <!-- ===== CLOTHES SET - ITS OWN WHITE BOX ===== -->
+        <!-- ===== BOX 2: Clothes Set (Separate White Box) ===== -->
         <div class="app-box">
             <span class="app-icon">👕</span>
             <h3>Clothes Set</h3>
@@ -286,8 +288,6 @@
                 <span class="emoji">📲</span> View on App Store
             </a>
         </div>
-
-        <div class="footer">📧 derickbedoya@icloud.com</div>
     </div>
 </body>
 </html>
