@@ -12,7 +12,6 @@
         }
 
         body {
-            /* 👇 CHANGE 'background.jpg' to YOUR background image filename */
             background-image: url(IMG_3512.jpeg);
             background-size: cover;
             background-position: center;
@@ -25,7 +24,6 @@
             padding: 20px;
         }
 
-        /* Dark overlay so text is readable */
         body::before {
             content: '';
             position: fixed;
@@ -50,13 +48,11 @@
             backdrop-filter: blur(10px);
         }
 
-        /* 👇 PROFILE PICTURE CIRCLE */
         .avatar {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             margin: 0 auto 15px;
-            /* 👇 CHANGE 'profile.jpg' to YOUR profile image filename */
             background-image: url('IMG_3747.jpeg');
             background-size: cover;
             background-position: center;
@@ -76,40 +72,58 @@
             margin-bottom: 25px;
         }
 
-        .link-btn {
-            display: block;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
-            text-decoration: none;
-            padding: 16px 20px;
-            margin: 12px 0;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 16px;
+        /* ===== SOCIAL ICON GRID (Left to Right) ===== */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin: 20px 0;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+            border-radius: 16px;
+            padding: 14px 8px;
             transition: all 0.3s ease;
-            border: 2px solid rgba(0,0,0,0.05);
+            text-decoration: none;
+            border: 2px solid transparent;
+            aspect-ratio: 1 / 1;
         }
 
-        .link-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        .social-btn:hover {
+            transform: scale(1.08);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
         }
 
-        .btn-instagram:hover { background: #E4405F; color: white; }
-        .btn-twitter:hover { background: #1DA1F2; color: white; }
-        .btn-youtube:hover { background: #FF0000; color: white; }
-        .btn-tiktok:hover { background: #000000; color: white; }
-        .btn-github:hover { background: #333; color: white; }
-        .btn-linkedin:hover { background: #0A66C2; color: white; }
+        .social-btn svg {
+            width: 32px;
+            height: 32px;
+            fill: currentColor;
+        }
+
+        /* Brand colors */
+        .btn-twitch { background: #9146FF; color: white; }
+        .btn-twitch:hover { background: #772CE8; }
+
+        .btn-youtube { background: #FF0000; color: white; }
+        .btn-youtube:hover { background: #CC0000; }
+
+        .btn-tiktok { background: #000000; color: white; }
+        .btn-tiktok:hover { background: #25F4EE; color: #000000; }
+
+        .btn-instagram { background: #E4405F; color: white; }
+        .btn-instagram:hover { background: #C13584; }
+
+        .btn-twitter { background: #000000; color: white; }
+        .btn-twitter:hover { background: #1DA1F2; }
 
         .footer {
             margin-top: 20px;
             font-size: 12px;
             color: #999;
-        }
-
-        .icon {
-            margin-right: 10px;
         }
     </style>
 </head>
@@ -127,30 +141,33 @@
             <a href="about.html" style="color: #4A90D9; text-decoration: none; font-weight: 600;">About</a>
         </div>
 
-        <!-- Social Links - REPLACE URLs with YOUR actual ones -->
-        <a href="https://instagram.com/yourusername" target="_blank" class="link-btn btn-instagram">
-            <span class="icon">📸</span> Instagram
-        </a>
+        <!-- ===== SOCIAL ICON GRID (Left to Right: Twitch, YouTube, TikTok, Instagram, Twitter) ===== -->
+        <div class="social-grid">
+            <!-- 1. Twitch -->
+            <a href="https://twitch.tv/yourusername" target="_blank" class="social-btn btn-twitch">
+                <svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z" fill="currentColor"/></svg>
+            </a>
 
-        <a href="https://twitter.com/yourusername" target="_blank" class="link-btn btn-twitter">
-            <span class="icon">🐦</span> Twitter / X
-        </a>
+            <!-- 2. YouTube -->
+            <a href="https://youtube.com/@yourusername" target="_blank" class="social-btn btn-youtube">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/></svg>
+            </a>
 
-        <a href="https://youtube.com/@yourusername" target="_blank" class="link-btn btn-youtube">
-            <span class="icon">▶️</span> YouTube
-        </a>
+            <!-- 3. TikTok -->
+            <a href="https://tiktok.com/@yourusername" target="_blank" class="social-btn btn-tiktok">
+                <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.76-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="currentColor"/></svg>
+            </a>
 
-        <a href="https://tiktok.com/@yourusername" target="_blank" class="link-btn btn-tiktok">
-            <span class="icon">🎵</span> TikTok
-        </a>
+            <!-- 4. Instagram -->
+            <a href="https://instagram.com/yourusername" target="_blank" class="social-btn btn-instagram">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg>
+            </a>
 
-        <a href="https://github.com/yourusername" target="_blank" class="link-btn btn-github">
-            <span class="icon">💻</span> GitHub
-        </a>
-
-        <a href="https://linkedin.com/in/yourusername" target="_blank" class="link-btn btn-linkedin">
-            <span class="icon">🔗</span> LinkedIn
-        </a>
+            <!-- 5. Twitter -->
+            <a href="https://twitter.com/yourusername" target="_blank" class="social-btn btn-twitter">
+                <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/></svg>
+            </a>
+        </div>
 
         <div class="footer">📧 derickbedoya@icloud.com</div>
     </div>
