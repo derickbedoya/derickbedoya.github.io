@@ -53,6 +53,8 @@
             position: relative;
             z-index: 1;
             backdrop-filter: blur(10px);
+            max-height: 95vh;
+            overflow-y: auto;
         }
 
         .avatar {
@@ -114,7 +116,6 @@
             display: block;
         }
 
-        /* Make icons even smaller on tiny screens */
         @media (max-width: 380px) {
             .social-btn img {
                 max-width: 38px;
@@ -125,15 +126,65 @@
             }
         }
 
-        .footer {
-            margin-top: 18px;
+        /* ===== APP FEATURE CARD ===== */
+        .app-card {
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+            border-radius: 16px;
+            padding: 16px 14px;
+            margin: 12px 0 16px;
+            border: 2px solid rgba(74, 144, 217, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .app-card:hover {
+            transform: scale(1.02);
+        }
+
+        .app-card .app-icon {
+            font-size: 36px;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .app-card h3 {
+            font-size: 17px;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .app-card p {
             font-size: 12px;
-            color: #999;
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .app-btn {
+            display: inline-block;
+            background: #007AFF;
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 122, 255, 0.3);
+        }
+
+        .app-btn:hover {
+            background: #0055CC;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4);
+        }
+
+        .app-btn .emoji {
+            margin-right: 6px;
         }
 
         /* Navigation */
         .nav-links {
-            margin-bottom: 18px;
+            margin-bottom: 15px;
             display: flex;
             gap: 15px;
             justify-content: center;
@@ -144,6 +195,24 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
+        }
+
+        .footer {
+            margin-top: 16px;
+            font-size: 12px;
+            color: #999;
+        }
+
+        /* Scrollbar */
+        .container::-webkit-scrollbar {
+            width: 4px;
+        }
+        .container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .container::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -161,9 +230,18 @@
             <a href="about.html">About</a>
         </div>
 
+        <!-- ===== APP FEATURE CARD ===== -->
+        <div class="app-card">
+            <span class="app-icon">👕</span>
+            <h3>Clothes Set</h3>
+            <p>Your ultimate outfit planning app. Mix, match, and style your wardrobe effortlessly.</p>
+            <a href="https://apps.apple.com/us/app/clothes-set/id6759241617" target="_blank" class="app-btn">
+                <span class="emoji">📲</span> View on App Store
+            </a>
+        </div>
+
         <!-- ===== SOCIAL ICON GRID ===== -->
         <div class="social-grid">
-            <!-- Row 1 -->
             <!-- 1. Twitch -->
             <a href="https://www.twitch.tv/camilogin" target="_blank" class="social-btn">
                 <img src="https://cdn.simpleicons.org/twitch/9146FF" alt="Twitch">
@@ -184,7 +262,6 @@
                 <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
             </a>
 
-            <!-- Row 2 -->
             <!-- 5. Facebook -->
             <a href="https://www.facebook.com/yourusername" target="_blank" class="social-btn">
                 <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook">
