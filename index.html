@@ -81,6 +81,24 @@
             margin-bottom: 18px;
         }
 
+        /* Navigation */
+        .nav-links {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: #4A90D9;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
         /* ===== SOCIAL ICON GRID ===== */
         .social-grid {
             display: grid;
@@ -126,33 +144,34 @@
             }
         }
 
-        /* ===== APP FEATURE CARD ===== */
-        .app-card {
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        /* ===== CLOTHES SET - ITS OWN WHITE BOX ===== */
+        .app-box {
+            background: white;
             border-radius: 16px;
-            padding: 16px 14px;
-            margin: 12px 0 16px;
-            border: 2px solid rgba(74, 144, 217, 0.2);
+            padding: 18px 16px;
+            margin: 16px 0 10px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
             transition: transform 0.3s ease;
         }
 
-        .app-card:hover {
-            transform: scale(1.02);
+        .app-box:hover {
+            transform: scale(1.01);
         }
 
-        .app-card .app-icon {
+        .app-box .app-icon {
             font-size: 36px;
             display: block;
             margin-bottom: 2px;
         }
 
-        .app-card h3 {
+        .app-box h3 {
             font-size: 17px;
             color: #333;
             margin-bottom: 3px;
         }
 
-        .app-card p {
+        .app-box p {
             font-size: 12px;
             color: #666;
             margin-bottom: 10px;
@@ -180,21 +199,6 @@
 
         .app-btn .emoji {
             margin-right: 6px;
-        }
-
-        /* Navigation */
-        .nav-links {
-            margin-bottom: 15px;
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .nav-links a {
-            color: #4A90D9;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
         }
 
         .footer {
@@ -230,17 +234,7 @@
             <a href="about.html">About</a>
         </div>
 
-        <!-- ===== APP FEATURE CARD ===== -->
-        <div class="app-card">
-            <span class="app-icon">👕</span>
-            <h3>Clothes Set</h3>
-            <p>Your ultimate outfit planning app. Mix, match, and style your wardrobe effortlessly.</p>
-            <a href="https://apps.apple.com/us/app/clothes-set/id6759241617" target="_blank" class="app-btn">
-                <span class="emoji">📲</span> View on App Store
-            </a>
-        </div>
-
-        <!-- ===== SOCIAL ICON GRID ===== -->
+        <!-- ===== SOCIAL ICON GRID (Apps come first) ===== -->
         <div class="social-grid">
             <!-- 1. Twitch -->
             <a href="https://www.twitch.tv/camilogin" target="_blank" class="social-btn">
@@ -280,6 +274,16 @@
             <!-- 8. Snapchat -->
             <a href="https://www.snapchat.com/add/yourusername" target="_blank" class="social-btn">
                 <img src="https://cdn.simpleicons.org/snapchat/FFFC00" alt="Snapchat">
+            </a>
+        </div>
+
+        <!-- ===== CLOTHES SET - ITS OWN WHITE BOX ===== -->
+        <div class="app-box">
+            <span class="app-icon">👕</span>
+            <h3>Clothes Set</h3>
+            <p>Your ultimate outfit planning app. Mix, match, and style your wardrobe effortlessly.</p>
+            <a href="https://apps.apple.com/us/app/clothes-set/id6759241617" target="_blank" class="app-btn">
+                <span class="emoji">📲</span> View on App Store
             </a>
         </div>
 
