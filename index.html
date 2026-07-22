@@ -24,7 +24,7 @@
             background-repeat: no-repeat;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             min-height: 100vh;
-            min-height: 100dvh; /* For dynamic viewport height on mobile */
+            min-height: 100dvh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -56,8 +56,8 @@
         }
 
         .avatar {
-            width: 90px;
-            height: 90px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             margin: 0 auto 12px;
             background-image: url('IMG_3747.jpeg');
@@ -68,22 +68,22 @@
         }
 
         h1 {
-            font-size: 24px;
+            font-size: 22px;
             color: #333;
             margin-bottom: 3px;
         }
 
         .subtitle {
             color: #666;
-            font-size: 13px;
-            margin-bottom: 20px;
+            font-size: 12px;
+            margin-bottom: 18px;
         }
 
         /* ===== SOCIAL ICON GRID ===== */
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
             margin: 15px 0;
         }
 
@@ -93,7 +93,7 @@
             justify-content: center;
             background: transparent;
             border-radius: 14px;
-            padding: 10px 5px;
+            padding: 8px 4px;
             transition: all 0.3s ease;
             text-decoration: none;
             aspect-ratio: 1 / 1;
@@ -107,21 +107,21 @@
         .social-btn img {
             width: 100%;
             height: 100%;
-            max-width: 55px;
-            max-height: 55px;
+            max-width: 48px;
+            max-height: 48px;
             object-fit: contain;
             border-radius: 12px;
             display: block;
         }
 
-        /* Make icons smaller on tiny screens */
+        /* Make icons even smaller on tiny screens */
         @media (max-width: 380px) {
             .social-btn img {
-                max-width: 42px;
-                max-height: 42px;
+                max-width: 38px;
+                max-height: 38px;
             }
             .social-grid {
-                gap: 6px;
+                gap: 8px;
             }
         }
 
@@ -161,8 +161,9 @@
             <a href="about.html">About</a>
         </div>
 
-        <!-- ===== SOCIAL ICON GRID with REAL APP ICONS ===== -->
+        <!-- ===== SOCIAL ICON GRID ===== -->
         <div class="social-grid">
+            <!-- Row 1 -->
             <!-- 1. Twitch -->
             <a href="https://www.twitch.tv/camilogin" target="_blank" class="social-btn">
                 <img src="https://cdn.simpleicons.org/twitch/9146FF" alt="Twitch">
@@ -183,9 +184,25 @@
                 <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
             </a>
 
-            <!-- 5. Twitter -->
+            <!-- Row 2 -->
+            <!-- 5. Facebook -->
+            <a href="https://www.facebook.com/yourusername" target="_blank" class="social-btn">
+                <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook">
+            </a>
+
+            <!-- 6. Threads -->
+            <a href="https://www.threads.net/@yourusername" target="_blank" class="social-btn">
+                <img src="https://cdn.simpleicons.org/threads/000000" alt="Threads">
+            </a>
+
+            <!-- 7. Twitter -->
             <a href="https://x.com/cami_login" target="_blank" class="social-btn">
                 <img src="https://cdn.simpleicons.org/x/000000" alt="Twitter">
+            </a>
+
+            <!-- 8. Snapchat -->
+            <a href="https://www.snapchat.com/add/yourusername" target="_blank" class="social-btn">
+                <img src="https://cdn.simpleicons.org/snapchat/FFFC00" alt="Snapchat">
             </a>
         </div>
 
